@@ -1,0 +1,4 @@
+db:
+  image: postgres
+web:
+  build: .

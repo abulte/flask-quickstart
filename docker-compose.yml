@@ -1,0 +1,19 @@
+web:
+  extends:
+    file: common.yml
+    service: web
+  volumes:
+    - .:/code
+  ports:
+    - "5001:5000"
+  links:
+    - db
+  command: python manage.py runserver -h 0.0.0.0 -p 5000 -d -r
+  environment:
+    - DATABASE_URL=postgresql://postgres@db/postgres
+db:
+  extends:
+    file: common.yml
+    service: db
+  ports:
+    - "5434:5432"
