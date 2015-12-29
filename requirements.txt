@@ -1,10 +1,9 @@
-flask-security
 flask-sqlalchemy
 psycopg2
 flask-script
-flask-bootstrap
 flask-migrate
 Flask-Failsafe
-flask-admin
-Flask-Login==0.2.11
-bcrypt
+flask-jwt
+flask-restful
+Flask-Mail
+Flask-Cors

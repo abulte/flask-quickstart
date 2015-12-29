@@ -5,21 +5,11 @@ import os
 ENV = os.environ.get('ENVIRONMENT', 'dev')
 SECRET_KEY = os.environ.get('SECRET_KEY', '(R)ze§§adm12313lkmjazML3z')
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-SECURITY_PASSWORD_HASH = 'bcrypt'
-SECURITY_PASSWORD_SALT = SECRET_KEY
-# -> /confirm
-SECURITY_CONFIRMABLE = False
-# -> /register
-SECURITY_REGISTERABLE = True
-# -> /reset
-SECURITY_RECOVERABLE = False
-# -> /change
-SECURITY_CHANGEABLE = True
-SECURITY_TRACKABLE = False
-SECURITY_PASSWORDLESS = False
+JWT_AUTH_URL_RULE = '/login'
 
-CSRF_ENABLED = True
+# CSRF_ENABLED = True
 
 MAIL_SERVER = os.environ.get('MAIL_SERVER', 'localhost')
 MAIL_PORT = os.environ.get('MAIL_PORT', 25)
