@@ -7,3 +7,4 @@ flask-jwt
 flask-restful
 Flask-Mail
 Flask-Cors
+bcrypt

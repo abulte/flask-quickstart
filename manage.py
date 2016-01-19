@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import bcrypt
 from datetime import datetime
 from flask.ext.script import Manager, Server
 from flask_failsafe import failsafe
@@ -20,13 +21,18 @@ manager.add_command('db', MigrateCommand)
 
 
 @manager.command
-def create_superuser(email, password):
+def create_user(email, password):
     user = User.query.filter_by(email=email).first()
     if not user:
+        password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
         user = User(email=email, password=password)
         user.confirmed_at = datetime.now()
         db.session.add(user)
         db.session.commit()
+        print 'User added.'
+    else:
+        print 'User already exists.'
+
 
 if __name__ == "__main__":
     manager.run()

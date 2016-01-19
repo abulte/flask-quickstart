@@ -7,7 +7,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '(R)ze§§adm12313lkmjazML3z')
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-JWT_AUTH_URL_RULE = '/login'
+JWT_AUTH_URL_RULE = None
 
 # CSRF_ENABLED = True
 

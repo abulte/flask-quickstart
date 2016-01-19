@@ -16,4 +16,4 @@ db = SQLAlchemy(app)
 from app import views  # NOQA
 from app import models
 from app import api
-from app import security
+from app.api import security
