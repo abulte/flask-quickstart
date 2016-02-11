@@ -9,7 +9,7 @@ from app import models
 class MyModelView(ModelView):
     def is_accessible(self):
         app.logger.debug('Auth admin : %s' % (current_user.roles))
-        return current_user.is_authenticated() and current_user.has_role('admin')
+        return current_user.is_authenticated and current_user.has_role('admin')
 
 
 class UserView(MyModelView):
