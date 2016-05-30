@@ -5,6 +5,7 @@ import os
 ENV = os.environ.get('ENVIRONMENT', 'dev')
 SECRET_KEY = os.environ.get('SECRET_KEY', '(R)ze§§adm12313lkmjazML3z')
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 SECURITY_PASSWORD_HASH = 'bcrypt'
 SECURITY_PASSWORD_SALT = SECRET_KEY
